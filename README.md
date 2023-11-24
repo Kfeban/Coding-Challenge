@@ -1,4 +1,9 @@
-# How To Find a Single Salary Given a Non-empty Array of Intergers(Salaries) using "C" Programming language
+# CODING CHALLENGE #
+
+# -PART 1
+
+
+# A. How To Find a Single Salary Given a Non-empty Array of Intergers(Salaries) using "C" Programming language
 
 ## i.Introduction
 This code wiil solve the problem of finding a single element(salary) in a non-empty array of integers(salaries) where every element appears twice except for one. The goal is to find that single element(salary).<p>
@@ -36,10 +41,6 @@ Output: 5000
      - 1.2 Problem statement
 - 2. Table of content
 - 3. Approach
-     
-     - 3.1 Frequency Array approach
-     
-     - 3.2 Bitwise XOR Approach
 - 4. Constaints
 - 5. How to use
 - 6. Code layout
@@ -128,5 +129,135 @@ The Frequency Array approach involves initializing a frequency array with the ma
 Alternatively, the XOR-based approach utilizes the XOR operator to cancel out the duplicate elements in the array, leaving only the single element. By performing the XOR operation on all the elements in the array, we can efficiently determine the single salary.
 
 Both approaches yield a time complexity of O(n), where n is the length of the input array. This ensures fast and scalable performance even for large arrays.
+
+
+
+
+# - PART 2
+
+# B. How to Find First and Last Position of Element in Sorted Array Given an array of integers numbers sorted in non-decreasing order
+
+## i. Inroduction
+
+This program solves the problem of finding the first and last occurrence of a target integer in a sorted array of integers. Given a sorted array and a target integer, the goal is to determine the indices of the first and last occurrences of the target integer in the array.
+
+
+***1.2 Problem statement*** <P>
+- find the starting and ending position of a given target value.
+If target is not found in the array, return [-1, -1].
+
+****Example 1****
+
+Input: numbers = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+
+****Example 2****
+
+Input: numbers = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]
+
+
+****Example 3****
+
+Input: numbers = [], target = 0
+Output: [-1,-1]
+
+****Constraints****
+• 0 <= numbers.length <= 105
+• -109 <= numbers[i] <= 1011
+• numbers is a non-decreasing array.
+• 0 <= target <= 1011
+
+## ii.Table on content
+- 1. Introduction
+     - 1.2 Problem statement
+- 2. Table of content
+- 3. Approach
+- 4. Constaints
+- 5. How to use
+- 6. Code layout
+- 7. Results/output
+- 8. Conclusion
+ 
+## iii.Approach
+
+- [x] ***Binary search approach***
+
+The program utilizes a modified binary search algorithm to find the first and last occurrences of the target integer. By performing two separate binary searches, we can efficiently locate the first and last occurrences in a logarithmic time complexity.
+
+The algorithm is as follows:
+1. Perform a binary search to find the first occurrence of the target integer:
+     - Initialize low and high pointers to the first and last indices of the array.
+     - While low is less than or equal to high:
+     - Calculate the mid index as the average of low and high.
+     - If the element at the mid index is equal to the target integer:
+     - Check if the mid index is the first occurrence or if the element at the previous index is different.
+     - If true, return the mid index as the first occurrence.
+     - Otherwise, update the high pointer to mid - 1 and continue the binary search.
+     - If the element at the mid index is less than the target integer, update the low pointer to mid + 1.
+     - If the element at the mid index is greater than the target integer, update the high pointer to mid - 1.
+     - If the target integer is not found, return an appropriate value indicating that the target integer does not exist in the array.
+2. Perform a binary search to find the last occurrence of the target integer:
+    - Initialize low and high pointers to the first and last indices of the array.
+    - While low is less than or equal to high:
+    - Calculate the mid index as the average of low and high.
+    - If the element at the mid index is equal to the target integer:
+    - Check if the mid index is the last occurrence or if the element at the next index is different.
+    - If true, return the mid index as the last occurrence.
+    - Otherwise, update the low pointer to mid + 1 and continue the binary search.
+    - If the element at the mid index is less than the target integer, update the low pointer to mid + 1.
+    - If the element at the mid index is greater than the target integer, update the high pointer to mid - 1.
+    - If the target integer is not found, return an appropriate value indicating that the target integer does not exist in the array.
+
+The program is designed to efficiently handle large arrays and provide accurate results for finding the first and last occurrences of the target integer.
+
+## iv.Constraints
+
+By considering these constraints, the program can handle arrays of different lengths, values, and a specified target value while accurately identifying the first and last occurrence of the target value in the array. It is important to ensure that the input array is sorted and the target value falls within the specified range for the program to operate correctly.
+
+1. Array Length: The length of the input array, numbers, satisfies the constraint 0 <= numbers.length <= 10^5. This means that the array can have a length ranging from 0 to 100,000 elements. The program is designed to handle arrays of varying lengths within this range efficiently.
+
+2. Element Values: Each element in the numbers array adheres to the constraint -10^9 <= numbers[i] <= 10^11. This indicates that the values of the elements in the array can range from -1,000,000,000 to 100,000,000,000. The program is built to handle such wide-ranging values and perform the necessary operations accurately.
+
+3. Sorted Array: The numbers array is assumed to be in non-decreasing order. This constraint ensures that the binary search algorithm can be applied correctly. The program expects the input array to be sorted in order for it to function accurately.
+
+4. Target Value: The constraint for the target value is 0 <= target <= 10^11. This means that the target value can range from 0 to 100,000,000,000. The program is designed to handle target values within this range.
+
+
+## v.How to use
+1. Copy the code from the code block.
+2. Compile the code using a C compiler.
+3. Run the compiled executable.
+4. The program will output the the first and last elemenet.
+Ensure that you have a C compiler installed on your system before attempting to compile the code.
+
+Feel free to modify the code and experiment with different test cases to test its functionality and performance.
+
+
+## vi.Code layout
+![image](https://github.com/Kfeban/Coding-Challenge/assets/151723266/6e5cd995-d116-4d66-bccd-8eae4eaf3071)
+![image](https://github.com/Kfeban/Coding-Challenge/assets/151723266/6edb735c-c92f-45c1-ae6e-38abd4b100ce)
+![image](https://github.com/Kfeban/Coding-Challenge/assets/151723266/36a11a67-c99b-450b-ae2a-99415422cf6d)
+
+
+## vii.Results/Output
+
+![image](https://github.com/Kfeban/Coding-Challenge/assets/151723266/8cbdc8bc-f9d2-4aab-9eac-c9f0979a49bc)
+
+The above output meets our given constraints
+
+
+## viii.Conclusion
+
+In conclusion, the "First and Last Integer" program is designed to efficiently identify the first and last occurrence of a target integer within a sorted, non-decreasing array. The program adheres to the constraints, including the array length, element values, sorted array requirement, and target value range, to provide accurate results.
+
+- By carefully considering the constraints, such as the array length ranging from 0 to 100,000 elements, element values within the range of -1,000,000,000 to 100,000,000,000, and the need for a sorted array, the program handles various scenarios effectively.
+
+- The program's objective is to locate the first and last occurrence of the target integer, providing valuable information for further analysis or processing. It handles cases where the target integer may or may not exist in the array, gracefully indicating the absence of the target value when required.
+
+- By adhering to these constraints and utilizing the program appropriately, users can confidently apply the "First and Last Integer" program to efficiently identify the first and last occurrence of a target integer in a sorted array, enabling more effective data manipulation and analysis.
+
+
+
 
 
